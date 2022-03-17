@@ -13,10 +13,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         gridView = supportFragmentManager.findFragmentById(R.id.myGridViewID) as MyGridView
-        gridView.title = "Title"
+//        gridView.title = "Title"
 
         val gridPresenter = MyGridPresenter()
-        gridPresenter.numberOfColumns = 4
+        gridPresenter.numberOfColumns = 1
 
         gridView.gridPresenter = gridPresenter
 
