@@ -44,12 +44,17 @@ class MainActivity : AppCompatActivity() {
         val itemPresenter = MyItemPresenter()
 
         val adapter = ArrayObjectAdapter(itemPresenter)
-        adapter.add("Pizza 1")
-        adapter.add("Pizza 2")
-        adapter.add("Pizza 3")
-        adapter.add("Pizza 4")
-        adapter.add("Pizza 5")
-        adapter.add("Pizza 6 with a very long title which will not fit")
+        adapter.add("Первый")
+        adapter.add("Россия 1")
+        adapter.add("Матч ТВ")
+        adapter.add("НТВ")
+        adapter.add("Канал 111")
+        adapter.add("Канал 112")
+        adapter.add("Канал 113")
+        adapter.add("Канал 114")
+        adapter.add("Канал 115")
+        adapter.add("Канал 116")
+        adapter.add("Канал 117")
 
         gridView.adapter = adapter
     }
@@ -58,9 +63,11 @@ class MainActivity : AppCompatActivity() {
         when (keyCode) {
             KeyEvent.KEYCODE_DPAD_LEFT -> {
                 if (gridViewWrapper.isVisible) {
-                    gridViewWrapper.visibility = View.INVISIBLE
+                    gridViewWrapper.visibility = View.GONE
                     return true
                 }
+            }
+            KeyEvent.KEYCODE_DPAD_RIGHT -> {
                 if (!gridViewWrapper.isVisible) {
                     gridViewWrapper.visibility = View.VISIBLE
                     return true
