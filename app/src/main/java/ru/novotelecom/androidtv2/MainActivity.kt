@@ -9,6 +9,7 @@ import android.widget.FrameLayout
 import androidx.core.view.isVisible
 import androidx.leanback.widget.ArrayObjectAdapter
 import androidx.leanback.widget.Visibility
+import ru.novotelecom.androidtv2.model.ChannelModel
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,11 +28,11 @@ class MainActivity : AppCompatActivity() {
         gridView.setSelectedPosition(0)
 
         gridView.setOnItemViewClickedListener { itemViewHolder, item, rowViewHolder, row ->
-            Log.i("OnItemViewClicked", item as String)
+            Log.i("OnItemViewClicked", (item as ChannelModel).title)
         }
 
         gridView.setOnItemViewSelectedListener { itemViewHolder, item, rowViewHolder, row ->
-            Log.i("OnItemViewSelected", item as String)
+            Log.i("OnItemViewSelected", (item as ChannelModel).title)
         }
 
 
@@ -44,17 +45,17 @@ class MainActivity : AppCompatActivity() {
         val itemPresenter = MyItemPresenter()
 
         val adapter = ArrayObjectAdapter(itemPresenter)
-        adapter.add("Первый")
-        adapter.add("Россия 1")
-        adapter.add("Матч ТВ")
-        adapter.add("НТВ")
-        adapter.add("Канал 111")
-        adapter.add("Канал 112")
-        adapter.add("Канал 113")
-        adapter.add("Канал 114")
-        adapter.add("Канал 115")
-        adapter.add("Канал 116")
-        adapter.add("Канал 117")
+        adapter.add(ChannelModel(1, "Первый", "http://cdn.2090000.ru/images/tvChannels/10338245.png"))
+        adapter.add(ChannelModel(2, "Россия 1", "http://cdn.2090000.ru/images/tvChannels/10338258.png"))
+        adapter.add(ChannelModel(3, "Матч ТВ", "http://cdn.2090000.ru/images/tvChannels/10338240.png"))
+        adapter.add(ChannelModel(4, "НТВ", "http://cdn.2090000.ru/images/tvChannels/10338229.png"))
+        adapter.add(ChannelModel(5, "Канал 111", "http://cdn.2090000.ru/images/tvChannels/28036134.png"))
+        adapter.add(ChannelModel(6, "Канал 112", "http://cdn.2090000.ru/images/tvChannels/28036134.png"))
+        adapter.add(ChannelModel(7, "Канал 113", "http://cdn.2090000.ru/images/tvChannels/28036134.png"))
+        adapter.add(ChannelModel(8, "Канал 114", "http://cdn.2090000.ru/images/tvChannels/28036134.png"))
+        adapter.add(ChannelModel(9, "Канал 115", "http://cdn.2090000.ru/images/tvChannels/28036134.png"))
+        adapter.add(ChannelModel(10, "Канал 116", "http://cdn.2090000.ru/images/tvChannels/28036134.png"))
+        adapter.add(ChannelModel(11, "Канал 117", "http://cdn.2090000.ru/images/tvChannels/28036134.png"))
 
         gridView.adapter = adapter
     }
